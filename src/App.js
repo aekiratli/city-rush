@@ -17,6 +17,7 @@ function App() {
   // });
 
   function changePage(page, fromWhere) {
+    console.log(page,fromWhere)
     var element = document.getElementById("main-frame");
     var rightElement = document.getElementById("right-frame");
     var homeElement = document.getElementById("home-frame");
@@ -29,10 +30,10 @@ function App() {
       homeElement.classList.add("animate__slideOutRight");
     }
     if (page === "up") {
-      homeElement.classList.add("animate__slideOutUp");
+      homeElement.classList.add("animate__slideOutDown");
     }
     if (page === "down") {
-      homeElement.classList.add("animate__slideOutDown");
+      homeElement.classList.add("animate__slideOutUp");
     }
     if (page === "left") {
       homeElement.classList.add("animate__slideOutLeft");
@@ -40,42 +41,96 @@ function App() {
     if (page === "home" && fromWhere === "right") {
       rightElement.classList.add("animate__fadeOut");
     }
+    if (page === "home" && fromWhere === "up") {
+      upElement.classList.add("animate__fadeOut");
+    }
+    if (page === "home" && fromWhere === "down") {
+      downElement.classList.add("animate__fadeOut");
+    }
+    if (page === "home" && fromWhere === "left") {
+      leftElement.classList.add("animate__fadeOut");
+    }
 
-  if( !fromWhere)
-  {
-  homeElement.addEventListener('animationend', () => {
+  homeElement.addEventListener('animationend', function handleAnim(){
     if (page === "right") 
     {
       homeElement.classList.remove("animate__slideOutRight");
-      setPage("right")
       rightElement.classList.add("animate__slideInRight");
+      setPage("right")
     }
-    if (page === "up") 
-      homeElement.classList.remove("animate__slideOutUp");
+    if (page === "up"){
+      homeElement.classList.remove("animate__slideOutDown");
+      upElement.classList.add("animate__slideInUp");
+      setPage("up")
+    }
+      
     
     if (page === "down") 
-      homeElement.classList.remove("animate__slideOutDown");
+    {
+      homeElement.classList.remove("animate__slideOutUp");
+      downElement.classList.add("animate__slideInDown");
+      setPage("down")
+    }
     
     if (page === "left") 
+    {
       homeElement.classList.remove("animate__slideOutLeft");
+      leftElement.classList.add("animate__slideInLeft");
+      setPage("left")
+    }
+      
     if (page === "home")
+    {
       homeElement.classList.remove("animate__fadeIn");
+
+
+    }
+    homeElement.removeEventListener('animationend', handleAnim);
+
+
   })
-}
-else{
-  console.log("yakalandın")
-}
-  rightElement.addEventListener('animationend', () => {
+
+  rightElement.addEventListener('animationend', function handleAnim() {
     rightElement.classList.remove("animate__slideInRight");
     if (fromWhere==="right"){
       rightElement.classList.remove("animate__fadeOut");
       setPage("home")
-      setTimeout(() => {homeElement.classList.add("animate__fadeIn");}, 2500);
-      
+      homeElement.classList.add("animate__fadeIn");
     }
+    rightElement.removeEventListener('animationend', handleAnim);
+
   })
 
+  upElement.addEventListener('animationend', function handleAnim() {
+    upElement.classList.remove("animate__slideInUp");
+    if (fromWhere==="up"){
+      upElement.classList.remove("animate__fadeOut");
+      setPage("home")
+      homeElement.classList.add("animate__fadeIn");
+    }
+    upElement.removeEventListener('animationend', handleAnim);
 
+  })
+  downElement.addEventListener('animationend', function handleAnim() {
+    downElement.classList.remove("animate__slideInDown");
+    if (fromWhere==="down"){
+      downElement.classList.remove("animate__fadeOut");
+      setPage("home")
+      homeElement.classList.add("animate__fadeIn");
+    }
+    downElement.removeEventListener('animationend', handleAnim);
+
+  })
+  leftElement.addEventListener('animationend', function handleAnim() {
+    leftElement.classList.remove("animate__slideInLeft");
+    if (fromWhere==="left"){
+      leftElement.classList.remove("animate__fadeOut");
+      setPage("home")
+      homeElement.classList.add("animate__fadeIn");
+    }
+    leftElement.removeEventListener('animationend', handleAnim);
+
+  })
 }
 
   
