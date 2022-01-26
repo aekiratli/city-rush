@@ -1,74 +1,132 @@
 .App {
   text-align: center;
-
+  font-family: 'Press Start 2P', cursive;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  padding-top: 50px;
+  font-size: 64px;
 }
+html  {
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden; 
+  background: linear-gradient(-90deg, #888686, #000000);
+  background-size: 400% 400%;
+  cursor: url("./assets/cursor.png") , auto;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  animation: gradient 4s ease infinite;}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
 
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-html {
-}
-
+  overflow-x: hidden; }
+  
 .right-frame {
-  background-color: cyan;
   min-height: 100vh;
   min-width: 100vw;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;   
+  background: url("./assets/right.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .home-frame {
-  background-color: blue;
   min-height: 100vh;
   min-width: 100vw;
+
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;   
+  background: url("./assets/home.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .up-frame {
-  background-color: green;
   min-height: 100vh;
   min-width: 100vw;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;   
+  background: url("./assets/up.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
 
 
 .down-frame {
-  background-color: rebeccapurple;
   min-height: 100vh;
   min-width: 100vw;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;   
+  background: url("./assets/down.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
 
 .left-frame {
-  background-color: tomato;
   min-height: 100vh;
   min-width: 100vw;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;   
+  background: url("./assets/left.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.button {
+  font-family: 'Press Start 2P', cursive;
+  color: rgb(65, 62, 62);
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button4 {
+  background-color: rgb(82, 78, 78);
+  color: rgb(255, 255, 255);
+  border: 2px solid #292323;
+}
+
+.button4:hover {background-color: #080707;
+  animation: flash 2s ease infinite;}
+
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }
