@@ -2,14 +2,18 @@ import logo from './logo.svg';
 import './App.css';
 import 'animate.css';
 import { useEffect, useState } from "react";
-
+import Particles from 'particlesjs';
 
 function App() {
 
 
   const [currentPage, setPage] = useState("home");
-
   useEffect(() => {
+    
+  var particles = Particles.init({
+    selector: '.background',
+    color: '#DA0463'
+  });
     // Add event listener
     document.addEventListener("mousemove", parallax);
     if (currentPage === "home")
@@ -31,7 +35,6 @@ function App() {
       let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
       let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
       let x = `${_depth3}, ${_depth2}, ${_depth1}`;
-      console.log(x);
       elem.style.backgroundPosition = x;
     }
   });
@@ -151,10 +154,11 @@ function App() {
 
 
 
-
   return (
     <>
       <div className="App" >
+      <canvas className="background"></canvas>
+
         <div id="main-frame" className="App-header">
           <div id="home-frame" className='animate__animated'>
             {
@@ -165,7 +169,6 @@ function App() {
                   <button className="button button4" onClick={() => changePage("left")} >Roadmap</button>
                   <button className="button button4" onClick={() => changePage("up")} >About the Project</button>
                   <button className="button button4" onClick={() => changePage("down")} >Game</button>
-
                 </div>
                 : ""
             }
@@ -199,10 +202,12 @@ function App() {
             }
           </div>
           <div id="down-frame" className='animate__animated'>
+
+              
             {
               currentPage === "down" ?
                 <div id="down" className='down-frame'>
-                  <button onClick={() => changePage("home", "down")} >Go back</button>
+    <button onClick={() => changePage("home", "down")} >Go back</button>
                 </div>
                 : ""
             }
