@@ -18,7 +18,11 @@ function App() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [index, setIndex] = useState(0);
 
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
   const [currentPage, setPage] = useState("home");
 
   useEffect(() => {
@@ -329,7 +333,7 @@ function App() {
 
                   <button className="button button4" onClick={() => changePage("home", "down")} >Go back</button>
                   <Container style={{maxWidth:"250px"}}>
-                  <Carousel className="caraousel" fade>
+                  <Carousel className="caraousel" fade activeIndex={index} onSelect={handleSelect}>
                       <Carousel.Item >
                       <img src={char1}alt="Second slide"/>
                       </Carousel.Item>
@@ -341,8 +345,9 @@ function App() {
                       </Carousel.Item>
                     </Carousel>
                     </Container>
+                    {index===0 ? "HERO THE MIGHT": ""}
+
                   <Container fluid="lg">
-                    
                     <button className='button button4'><FontAwesomeIcon size="2x" icon={faUnlock} /> Unlock Wallet</button>
                     <button className='button button4'><FontAwesomeIcon size="2x" icon={faPlayCircle} /> Play Game</button>
                   </Container>
