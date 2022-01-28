@@ -59,7 +59,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;   
-  background: url("./assets/up.jpg") no-repeat center center fixed; 
+  background: url("./assets/up.png") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -260,3 +260,6 @@ body {
   font-family: 'Press Start 2P', cursive;
 }
 
+.icons {
+  padding-right: 15px;
+}

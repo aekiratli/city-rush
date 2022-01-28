@@ -4,10 +4,10 @@ import 'animate.css';
 import { useEffect, useState } from "react";
 import Particles from 'particlesjs';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Accordion, Container, Carousel, Modal, Row, Col,Button } from 'react-bootstrap';
+import { Accordion, Container, Carousel, Modal, Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUnlock, faPlayCircle, faFire, faFingerprint, faDiceD20 } from '@fortawesome/free-solid-svg-icons'
-import { faDiscord,faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faUnlock, faCoins,faPlayCircle, faRunning, faFire, faFingerprint, faDiceD20, faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faDiscord, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 import char1 from "./assets/char1.gif"
 import char2 from "./assets/char2.gif"
@@ -195,7 +195,7 @@ function App() {
             {
               currentPage === "right" ?
                 <div id="right" className="right-frame ">
-                  <button className="button button4" onClick={() => changePage("home", "right")} >Go back</button>
+                  <button className="button button4" onClick={() => changePage("home", "right")} >Go Back</button>
                   <Container>
                     <Accordion className="animate__animated animate__rollIn animate__delay-1s above-canvas">
                       <Accordion.Item eventKey="0">
@@ -233,7 +233,7 @@ function App() {
               currentPage === "left" ?
                 <div id="left" className='left-frame'>
 
-                  <button className="button button4" onClick={() => changePage("home", "left")} >Go back</button>
+                  <button className="button button4" onClick={() => changePage("home", "left")} >Go Back</button>
                   <div className='animate__animated animate__bounceInLeft animate__delay-1s' >
                     <div class="col">
                       <div class="timeline-steps" onClick={handleShow}>
@@ -295,12 +295,12 @@ function App() {
             {
               currentPage === "up" ?
                 <div id="up" className='up-frame'>
-                  <button className="button button4" onClick={() => changePage("home", "up")} >Go back</button>
+                  <button className="button button4" onClick={() => changePage("home", "up")} >Go Back</button>
                   <div className='about-project'>
                     <h1 className='animate__animated animate__bounceInLeft animate__delay-1s'>Welcome to the Night City</h1>
                     <div >
                       <Row>
-                        <Col className='animate__animated animate__bounceInLeft animate__delay-2s'><FontAwesomeIcon size ="5x" icon={faDiceD20} />
+                        <Col className='animate__animated animate__bounceInLeft animate__delay-2s'><FontAwesomeIcon size="5x" icon={faDiceD20} />
                         </Col>
                         <Col className='animate__animated animate__bounceInLeft animate__delay-3s'><FontAwesomeIcon size="5x" icon={faFingerprint} />
                         </Col>
@@ -315,8 +315,8 @@ function App() {
                         <Col className='animate__animated animate__bounceInLeft animate__delay-4s'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
                         </Col>
                       </Row>
-                      <button className="button button4"><FontAwesomeIcon size ="2x" icon={faTwitter} /></button>
-                      <button className="button button4"><FontAwesomeIcon size ="2x" icon={faDiscord} /></button>
+                      <button className="button button4"><FontAwesomeIcon size="2x" icon={faTwitter} /></button>
+                      <button className="button button4"><FontAwesomeIcon size="2x" icon={faDiscord} /></button>
                     </div>
                   </div>
                 </div>
@@ -331,22 +331,79 @@ function App() {
               currentPage === "down" ?
                 <div id="down" className='down-frame'>
 
-                  <button className="button button4" onClick={() => changePage("home", "down")} >Go back</button>
-                  <Container style={{maxWidth:"250px"}}>
-                  <Carousel className="caraousel" fade activeIndex={index} onSelect={handleSelect}>
+                  <button className="button button4" onClick={() => changePage("home", "down")} >Go Back</button>
+                  <Container style={{ maxWidth: "250px" }}>
+                    <Carousel className="caraousel" fade activeIndex={index} onSelect={handleSelect}>
                       <Carousel.Item >
-                      <img src={char1}alt="Second slide"/>
+                        <img src={char1} alt="Second slide" />
                       </Carousel.Item>
                       <Carousel.Item>
-                        <img src={char2}alt="Second slide"/>
+                        <img src={char2} alt="Second slide" />
                       </Carousel.Item>
                       <Carousel.Item>
-                      <img src={char3}alt="Second slide"/>
+                        <img src={char3} alt="Second slide" />
                       </Carousel.Item>
                     </Carousel>
-                    </Container>
-                    {index===0 ? "HERO THE MIGHT": ""}
+                  </Container>
+                  {index === 0  ?
+                    <div className='animate__animated animate__flip'>
+                      <h2>Day Walker</h2>
+                      <h3>Stats:</h3>
+                      <Container style={{paddingTop:"25px", paddingBottom: "25px"}}>
+                      <Row>
+                        <Col style={{color:"white", textAlign:"right"}}>Health:  </Col>
+                        <Col style={{textAlign:"left"}}><FontAwesomeIcon size="2x" style={{color:"red",marginRight:"5px"}} icon={faHeart} /><FontAwesomeIcon size="2x" style={{color:"red",marginRight:"5px"}} icon={faHeart} /><FontAwesomeIcon size="2x" style={{color:"red",marginRight:"5px"}} icon={faHeart} /></Col>
+                      </Row>
+                      <Row style={{paddingTop:"15px", paddingBottom: "15px"}}>
+                      <Col style={{color:"white", textAlign:"right"}}>Stamina: </Col>
+                      <Col style={{color:"blue", textAlign:"left"}}><FontAwesomeIcon size="2x" icon={faRunning} style={{marginRight:"5px"}}/><FontAwesomeIcon size="2x" icon={faRunning} style={{marginRight:"5px"}}/><FontAwesomeIcon size="2x" style={{marginRight:"5px"}} icon={faRunning} /><FontAwesomeIcon style={{marginRight:"5px"}} size="2x" icon={faRunning} /></Col>
+                      </Row>
+                      <Row>
+                      <Col style={{color:"white", textAlign:"right"}}>Earn Bonus: </Col>
+                      <Col style={{color:"gold", textAlign:"left"}}><FontAwesomeIcon size="2x" style={{marginRight:"5px"}} style={{marginRight:"5px"}} icon={faCoins} /><FontAwesomeIcon size="2x" icon={faCoins} /></Col>
+                      </Row>
+                      </Container>
+                    </div> : ""}
 
+                    {index === 1  ?
+                    <div className='animate__animated animate__flip'>
+                      <h2>Night Stalker</h2>
+                      <h3>Stats:</h3>
+                      <Container style={{paddingTop:"25px", paddingBottom: "25px"}}>
+                      <Row>
+                        <Col style={{color:"white", textAlign:"right"}}>Health:  </Col>
+                        <Col style={{textAlign:"left"}}><FontAwesomeIcon size="2x" style={{color:"red",marginRight:"5px"}} icon={faHeart} /><FontAwesomeIcon size="2x" style={{color:"red",marginRight:"5px"}} icon={faHeart} /></Col>
+                      </Row>
+                      <Row style={{paddingTop:"15px", paddingBottom: "15px"}}>
+                      <Col style={{color:"white", textAlign:"right"}}>Stamina: </Col>
+                      <Col style={{color:"blue", textAlign:"left"}}><FontAwesomeIcon size="2x" icon={faRunning} style={{marginRight:"5px"}}/><FontAwesomeIcon size="2x" icon={faRunning} style={{marginRight:"5px"}}/><FontAwesomeIcon size="2x" icon={faRunning} style={{marginRight:"5px"}}/><FontAwesomeIcon size="2x" style={{marginRight:"5px"}} icon={faRunning} /><FontAwesomeIcon style={{marginRight:"5px"}} size="2x" icon={faRunning} /></Col>
+                      </Row>
+                      <Row>
+                      <Col style={{color:"white", textAlign:"right"}}>Earn Bonus: </Col>
+                      <Col style={{color:"gold", textAlign:"left"}}><FontAwesomeIcon size="2x" icon={faCoins} /></Col>
+                      </Row>
+                      </Container>
+                    </div> : ""}
+
+                    {index === 2  ?
+                    <div className='animate__animated animate__flip'>
+                      <h2>Gun Talker</h2>
+                      <h3>Stats:</h3>
+                      <Container style={{paddingTop:"25px", paddingBottom: "25px"}}>
+                      <Row>
+                        <Col style={{color:"white", textAlign:"right"}}>Health:  </Col>
+                        <Col style={{textAlign:"left"}}><FontAwesomeIcon size="2x" style={{color:"red",marginRight:"5px"}} icon={faHeart} /><FontAwesomeIcon size="2x" style={{color:"red",marginRight:"5px"}} icon={faHeart} /><FontAwesomeIcon size="2x" style={{color:"red",marginRight:"5px"}} icon={faHeart} /></Col>
+                      </Row>
+                      <Row style={{paddingTop:"15px", paddingBottom: "15px"}}>
+                      <Col style={{color:"white", textAlign:"right"}}>Stamina: </Col>
+                      <Col style={{color:"blue", textAlign:"left"}}><FontAwesomeIcon style={{marginRight:"5px"}} size="2x" icon={faRunning} /></Col>
+                      </Row>
+                      <Row>
+                      <Col style={{color:"white", textAlign:"right"}}>Earn Bonus: </Col>
+                      <Col style={{color:"gold", textAlign:"left"}}><FontAwesomeIcon size="2x" style={{marginRight:"5px"}} icon={faCoins} /><FontAwesomeIcon size="2x" style={{marginRight:"5px"}} icon={faCoins} /><FontAwesomeIcon size="2x" style={{marginRight:"5px"}} icon={faCoins} /><FontAwesomeIcon size="2x" style={{marginRight:"5px"}} style={{marginRight:"5px"}} icon={faCoins} /><FontAwesomeIcon size="2x" icon={faCoins} /></Col>
+                      </Row>
+                      </Container>
+                    </div> : ""}
                   <Container fluid="lg">
                     <button className='button button4'><FontAwesomeIcon size="2x" icon={faUnlock} /> Unlock Wallet</button>
                     <button className='button button4'><FontAwesomeIcon size="2x" icon={faPlayCircle} /> Play Game</button>
