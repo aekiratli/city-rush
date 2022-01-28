@@ -94,6 +94,8 @@ body {
   animation: 2s 1 bgcolorchange;
   background-color: rgb(75, 75, 75);
   color: wheat;
+  z-index: 2;
+  position: relative;
 }
 .down-frame {
   min-height: 100vh;
@@ -106,7 +108,8 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
+  z-index: 2;
+  position: relative;
 }
 
 .left-frame {
@@ -202,7 +205,7 @@ body {
   z-index: 2;
 }
 
-@media (min-width:768px) {
+@media (max-width:600px) {
   .timeline-steps .timeline-step:not(:last-child):after {
       content: "";
       display: block;
@@ -221,6 +224,15 @@ body {
       right: 7.5rem;
       top: .3125rem
   }
+  .project-text {
+    font-size: 12px !important;
+  }
+
+  
+}
+
+.project-text {
+  font-size: 16px;
 }
 
 .timeline-steps .timeline-content {

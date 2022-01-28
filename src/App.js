@@ -299,7 +299,7 @@ function App() {
                   <div className='about-project'>
                     <h1 className='animate__animated animate__bounceInLeft animate__delay-1s'>Welcome to the Night City</h1>
                     <div >
-                      <Row>
+                      <Row style={{paddingBottom:"25px"}}>
                         <Col className='animate__animated animate__bounceInLeft animate__delay-2s'><FontAwesomeIcon size="5x" icon={faDiceD20} />
                         </Col>
                         <Col className='animate__animated animate__bounceInLeft animate__delay-3s'><FontAwesomeIcon size="5x" icon={faFingerprint} />
@@ -308,11 +308,11 @@ function App() {
                         </Col>
                       </Row>
                       <Row style={{ paddingBottom: "25px" }}>
-                        <Col className='animate__animated animate__bounceInLeft animate__delay-2s'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                        <Col className='animate__animated animate__bounceInLeft animate__delay-2s project-text'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
                         </Col>
-                        <Col className='animate__animated animate__bounceInLeft animate__delay-3s'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                        <Col className='animate__animated animate__bounceInLeft animate__delay-3s project-text'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
                         </Col>
-                        <Col className='animate__animated animate__bounceInLeft animate__delay-4s'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                        <Col className='animate__animated animate__bounceInLeft animate__delay-4s project-text'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
                         </Col>
                       </Row>
                       <button className="button button4"><FontAwesomeIcon size="2x" icon={faTwitter} /></button>
